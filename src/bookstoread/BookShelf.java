@@ -12,4 +12,7 @@ public class BookShelf {
         return Collections.unmodifiableList(books);
     }
 
+    public void add(String...bookToAdd) {
+        books.addAll(Arrays.asList(bookToAdd));
+    }
 }
