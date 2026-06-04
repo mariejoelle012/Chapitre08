@@ -53,8 +53,7 @@ public class BookShelfSpec {
             books.add(mythicalManMonth);
             fail(() -> "Should not be able to add book to books");
         } catch (Exception e) {
-            assertTrue(e instanceof UnsupportedOperationException,
-                    () -> "Should throw UnsupportedOperationException.");
+            assertTrue(e instanceof UnsupportedOperationException, () -> "Should throw UnsupportedOperationException.");
         }
     }
 
@@ -62,11 +61,7 @@ public class BookShelfSpec {
     void bookshelfArrangedByBookTitle() {
         shelf.add(effectiveJava, codeComplete, mythicalManMonth);
         List<Book> books = shelf.arrange();
-        assertEquals(
-                List.of(codeComplete, effectiveJava, mythicalManMonth),
-                books,
-                () -> "Books in a bookshelf should be arranged lexicographically by book title"
-        );
+        assertEquals(List.of(codeComplete, effectiveJava, mythicalManMonth), books, () -> "Books in a bookshelf should be arranged lexicographically by book title");
     }
 
     @Test
@@ -74,10 +69,6 @@ public class BookShelfSpec {
         shelf.add(effectiveJava, codeComplete, mythicalManMonth);
         shelf.arrange();
         List<Book> books = shelf.books();
-        assertEquals(
-                List.of(effectiveJava, codeComplete, mythicalManMonth),
-                books,
-                () -> "Books in bookshelf are in insertion order"
-        );
+        assertEquals(List.of(effectiveJava, codeComplete, mythicalManMonth), books, () -> "Books in bookshelf are in insertion order");
     }
 }
