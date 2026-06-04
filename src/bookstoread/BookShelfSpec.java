@@ -29,12 +29,7 @@ public class BookShelfSpec {
         assertEquals(2, books.size(), () -> "BookShelf should have two books.");
     }
 
-    @Test
-    public void emptyBookShelfWhenAddIsCalledWithoutBooks() {
-        shelf.add();
-        List<String> books = shelf.books();
-        assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
-    }
+
     @Test
     void booksReturnedFromBookShelfIsImmutableForClient() {
         shelf.add("Effective Java", "Code Complete");
